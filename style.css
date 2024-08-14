@@ -1,0 +1,386 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/*IMAGE FOR THE OVERLAY*/
+.overlay {
+  position: relative; /* Allows positioning adjustments */
+  right: -35rem; /* Shifts the image to the right by 10rem */
+  top: -8rem; /* Shifts the image up by 5rem */
+}
+
+
+
+
+body {
+  background-image: url('images/school.jpg');
+  background-size: cover; /* Ensures the background covers the entire element */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents tiling of the background image */
+  width: 100%;
+  height: 100vh; /* Ensures the background image covers the full viewport height */
+  margin: 0;
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+a:hover {
+  color: orange;
+}
+
+/* HEADER */
+
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Add this to highlight the active link */
+.navbar .links a.active,
+.dropdown_menu a.active {
+  color: orange;
+  border-bottom: 2px solid orange; /* Optional: Add an underline */
+}
+
+
+.action_btn {
+  background-color: orange;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.action_btn:hover {
+  transform: scale(0.95); 
+  color: #fff;
+}
+
+.action_btn:active {
+  transform: scale(0.95); 
+}
+
+/*MAIN ACTION BTN1*/
+.action_btn1 {
+  position: relative;
+  background-color: white;
+  color: orange;
+  padding: 0.5rem 1rem;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1.2rem;
+  bottom: -13rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 200px;
+  transition: 0.3s;
+  margin-left: 0.3rem; /* Increased margin to align button with text */
+}
+
+.action_btn1:hover {
+  border: 1px solid #fff;
+  background: none;
+  transform: scale(0.95); 
+  color: #fff;
+}
+
+.action_btn1:active {
+  transform: scale(0.95); 
+}
+
+
+/* DROPDOWN MENU */
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+.dropdown_menu.open {
+  height: 270px;
+  width: 240px;
+}
+
+.dropdown_menu li {
+  padding: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown_menu li:hover {
+  color: orange;
+}
+
+
+/*HERO*/
+section#hero {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align items to the start (left) */
+  justify-content: space-evenly;
+  text-align: left; /* Align text to the left */
+  color: #fff;
+  /* padding-left: 10rem; Increased padding to shift content right */
+  line-height: 1.2; /* Adjust this value as needed */
+
+}
+
+
+#hero h1{
+  position: relative;
+  font-size: 2.5rem;
+  bottom: -11rem;
+  font-weight: normal;
+}
+
+
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action_btn {
+    display: none;
+  }
+
+  .navbar .toggle_btn {
+    display: block;
+  }
+
+  .dropdown_menu {
+    display: block;
+  }
+}
+
+
+/*FOOTER*/
+
+.container{
+	max-width: 1170px;
+	margin:auto;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul{
+	list-style: none;
+}
+
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: orange;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+/*RESPONSIVE FOOTER*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+
+
+/*SCROLL TO TOP*/
+.scrollTop{
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  background-color: orange;
+  color: #fff;
+  border-radius: 20px;
+  border-radius: 1px solid #fff;
+  cursor: pointer;
+  transition: all 0.5s ease 0s;
+}
+
+.scrollTop:hover{
+  background-color: #fff;
+  color: orange;
+}
+
+/**PAGE CONTENT FOR IMAGE AND TEXT**/
+.image-container, .image-container2, .image-container3 {
+  width: 100%;
+  height: 500px; /* Adjust this height as needed */
+  overflow: hidden;
+  position: relative;
+  margin: 1rem 0; /* Space between sections */
+}
+
+.cropped-image, .cropped-image2, .cropped-image3 {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+}
+
+.inscription, .inscription2, .inscription3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+}
+
+
+/*CONTENT FOR IMAGE AND TEXT RESPONSIVENESS*/
+@media (max-width: 768px) {
+  .image-container, .image-container2, .image-container3 {
+    height: 300px; /* Adjust based on your needs */
+  }
+
+  .inscription, .inscription2, .inscription3 {
+    font-size: 0.9rem; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .image-container, .image-container2, .image-container3 {
+    height: 250px; /* Adjust based on your needs */
+  }
+
+  .inscription, .inscription2, .inscription3 {
+    font-size: 0.8rem; /* Adjust for smaller screens */
+  }
+}
+
+
